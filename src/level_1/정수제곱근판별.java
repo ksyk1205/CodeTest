@@ -26,7 +26,6 @@ public class 정수제곱근판별 {
 
 	}
 	public static long solution(long n) {
-        long answer = 0;
         double d =  Math.sqrt(n);
         int i = (int) d;
         
