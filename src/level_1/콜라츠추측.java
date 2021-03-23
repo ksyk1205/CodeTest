@@ -29,17 +29,17 @@ public class 콜라츠추측 {
 		입출력 예 #3
 		626331은 500번을 시도해도 1이 되지 못하므로 -1을 리턴해야합니다.
 		*/
-		int n = solution(16);
+		int n = solution(626331);
 		System.out.println(n);
 	}
 	public static int solution(int num) {
         int count = 0;
-        
-    	while(num!=1) {
-    		if(num%2==0) {
-    			num /= 2; 
+        long n = num;
+    	while(n!=1) {
+    		if(n%2==0) {
+    			n /= 2; 
     		}else {
-    			num = num*3+1;
+    			n = n*3+1;
     		}
     		count++;
     		if(count==500) {
