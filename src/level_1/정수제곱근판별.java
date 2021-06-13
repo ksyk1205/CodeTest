@@ -21,15 +21,15 @@ public class 정수제곱근판별 {
 		입출력 예#2
 		3은 양의 정수의 제곱이 아니므로, -1을 리턴합니다.
 		*/
-		long number = solution(3);
+		long number = solution(121);
 		System.out.println(number);
 
 	}
 	public static long solution(long n) {
-        double d =  Math.sqrt(n);
-        int i = (int) d;
+        double d = Math.sqrt(n);
+        int i = (int)d;
         
-        return d == i ? (long)Math.pow(d+1, 2) : -1;
+        return (long) (d == i ? Math.pow(d+1, 2) : -1);
        
     }
 

@@ -26,13 +26,13 @@ public class 문자열내림차순으로배치하기 {
 		System.out.println(answer);
 	}
 	 public static String solution(String s) {
-		 String[] array = s.split("");
-     
-		 //내림차순으로 정렬 Collections.reverseOrder()
-		 Arrays.sort(array, Collections.reverseOrder());
-	     
-	     return String.join("",array);
-	     //String.join("추가할 대상","대상List나 Aarray")-String으로 바꺼줌
+		 String[] arr = s.split("");
+		 
+		 Arrays.sort(arr,Collections.reverseOrder());
+		 
+		 return String.join("", arr);
+		 
+		
 	 }
 
 }

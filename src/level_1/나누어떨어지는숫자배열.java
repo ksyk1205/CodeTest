@@ -18,9 +18,9 @@ public class 나누어떨어지는숫자배열 {
 		divisor는 자연수입니다.
 		array는 길이 1 이상인 배열입니다.
 		입출력 예
-		arr	divisor	return
-		[5, 9, 7, 10]	5	[5, 10]
-		[2, 36, 1, 3]	1	[1, 2, 3, 36]
+		arr				divisor	return
+		[5, 9, 7, 10]	5		[5, 10]
+		[2, 36, 1, 3]	1		[1, 2, 3, 36]
 		[3,2,6]	10	[-1]
 		입출력 예 설명
 		입출력 예#1
@@ -39,25 +39,29 @@ public class 나누어떨어지는숫자배열 {
 		System.out.println(Arrays.toString(answer));
 	}
 	public static int[] solution(int[] arr, int divisor) {
-        List<Integer> list = new ArrayList<Integer>();
-        for(int i=0; i<arr.length; i++) {
-        	if(arr[i]%divisor==0) {
-        		list.add(arr[i]);
-        	}
-        }
-      
-        if(list.size() == 0) {
-        	int[] arry = {-1};
-        	return arry;
-        }else {
-        	int[] arry = new int[list.size()];
-        	for(int i=0; i<arry.length; i++) {
-        		arry[i] = list.get(i);
-        	}
-        	Arrays.sort(arry);
-        	return arry;
-        }
-        
+		List<Integer> arr1 = new ArrayList<Integer>();
+		//arr배열에서 divisor로 나누어 떨어지는 값만 arr1에 담아준다.
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]%divisor==0) {
+				arr1.add(arr[i]);
+			}
+		}
+		
+		if(arr1.size()==0) {
+			int[] answer = {-1};
+			return answer;
+		}else {
+			int[] answer = new int[arr1.size()];//return 값을 담아줄 배열
+			
+			for(int i=0; i<arr1.size(); i++) {
+				answer[i] = arr1.get(i);
+			}
+			//오름차순
+			Arrays.sort(answer);
+			
+			return answer;
+		}
+		
     }
 
 }

@@ -9,7 +9,8 @@ public class 제일작은수제거하기 {
 		/*
 		문제 설명
 		정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요.
-		단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, 
+		단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 
+		예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, 
 		[10]면 [-1]을 리턴 합니다.
 
 		제한 조건
@@ -32,53 +33,33 @@ public class 제일작은수제거하기 {
 			arr[i] = stdIn.nextInt();
 		}
 		int[] solution  = solution(arr);
-		
+	
 		Arrays.toString(solution);
 		
 		
 	}
 	public static int[] solution(int[] arr) {
-        /*
-		if(arr.length<=1) {
-        	return new int[]{-1};
+        if(arr.length ==1) {
+        	int[] answer = {-1};
+        	return answer;
         }
-        List<Integer> array = new ArrayList<Integer>();
-        
-        for(int i=0; i<arr.length; i++) {
-        	array.add(arr[i]);
-        }
-        int minidx = 0;
-        for(int i=1; i<arr.length; i++) {
-        	if(arr[minidx]>arr[i]) {
-        		minidx = i;
+		
+		int min = arr[0];
+        for(int i=1; i<=arr.length-1; i++) {
+        	if(arr[i]<min) {
+        		min = arr[i];
         	}
         }
-        array.remove(minidx);
-        int[] answer = new int[array.size()];
-        
-        for(int i=0; i<answer.length; i++) {
-        	answer[i] = array.get(i);
+		
+		int[] answer = new int[arr.length-1];
+        int count =0;
+		for(int i=0; i<arr.length; i++) {
+        	if(arr[i] == min) {
+        		continue;
+        	}
+        	answer[count++]= arr[i];
         }
-        */	
-		if(arr.length<=1) {
-           return new int[]{-1};
-        } 
-        int min = arr[0];
-        for(int i=1; i<arr.length; i++) {
-           if(min>arr[i]) {
-              min = arr[i];
-           }
-        }
-        int[] answer = new int[arr.length-1];
-        int j =0;
-        for(int i=0;i<arr.length;++i) {
-           if(arr[i] == min) {
-              continue;
-           }
-           answer[j] = arr[i];
-           j++;
-        }
-        
+		
         return answer;
     }
 

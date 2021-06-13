@@ -24,15 +24,17 @@ public class 직사각형별찍기 {
 		*/
 		
 		Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(); //가로길이
-        int m = sc.nextInt(); //세로길이
         
-        for(int i=0; i<m; i++) {
-        	for(int j=0; j<n; j++) {
-        		System.out.print("*");
-        	}
-        	System.out.println();
-        }
+		int m = sc.nextInt(); //세로길이(행)
+		int n = sc.nextInt(); //가로길이(렬)
+        
+        
+       for(int i=0; i<m; i++) {
+    	   for(int j=0; j<n; j++) {
+    		   System.out.print("*");
+    	   }
+    	   System.out.println();
+       }
         
 	}
 

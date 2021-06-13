@@ -23,11 +23,10 @@ public class Â¦¼ö¿ÍÈ¦¼ö {
 		String answer = solution(num);
 		
 		System.out.println("num         retrun");
-		System.out.println(num+"       "+answer);
+		System.out.println(num+"        "+answer);
 		
 	}
 	public static String solution(int num) {
-        return num%2==0? "Even":"Odd";
-
+		return num%2==0 ? "Even" : "Odd";
     }
 }

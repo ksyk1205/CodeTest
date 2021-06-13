@@ -29,15 +29,15 @@ public class 자연수뒤집어배열로만들기 {
 
 	}
 	public static int[] solution(long n) {
-		List<Long> arrays = new ArrayList<Long>();
+		List<Long> list = new ArrayList<Long>();
 		while(n>0) {
-			arrays.add(n%10);
+			list.add(n%10);
 			n/=10;
 		}
-		int[] answer = new int[arrays.size()];
-		for(int i=0; i<arrays.size(); i++){
-			Long num = arrays.get(i);
-			answer[i] = num.intValue();
+		int[] answer =new int[list.size()];
+		
+		for(int i=0; i<list.size(); i++) {
+			answer[i] = list.get(i).intValue();
 		}
 		return answer;
 	}

@@ -33,11 +33,12 @@ public class 소수찾기 {
         	for(int j=2; j<i; j++) {
         		if(i%j==0) {
         			isChk = true;
-        			break;
-        		}        			
-        	}
-        	if(!isChk)
+        		}
+          	}
+        	if(!isChk) {
         		answer++;
+        	}
+        	
         }
         return answer;
     }
