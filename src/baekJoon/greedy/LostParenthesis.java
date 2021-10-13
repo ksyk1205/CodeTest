@@ -15,15 +15,12 @@ public class LostParenthesis {
 		int sum = 0; 
 		for(int i=0; i<arr.length; i++) {
 			int plus = 0;
-			if(arr[i].contains("+")) {
-				String[] s = arr[i].split("\\+");
+			String[] s = arr[i].split("\\+");
 				
-				for(int j=0; j<s.length; j++) {
-					plus += Integer.parseInt(s[j]);
-				}
-			}else {
-				plus=Integer.parseInt(arr[i]);
+			for(int j=0; j<s.length; j++) {
+				plus += Integer.parseInt(s[j]);
 			}
+			
 			
 			if(i==0) {
 				sum+=plus;
