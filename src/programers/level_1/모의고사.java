@@ -40,46 +40,39 @@ public class 모의고사 {
 
 		모든 사람이 2문제씩을 맞췄습니다.
 		*/
-		int[] answers = {1,3,2,4,2};
+		int[] answers = {1,2,3,4,5};
 		int[] solution  = solution(answers);
 		
 		System.out.println(Arrays.toString(solution));
 		
 	}
 	public static int[] solution(int[] answers) {
-        int[] arr1 = {1,2,3,4,5};
-        int[] arr2 = {2,1,2,3,2,4,2,5};
-        int[] arr3 = {3,3,1,1,2,2,4,4,5,5};
+		int[] math1 = {1,2,3,4,5};
+        int[] math2 = {2,1,2,3,2,4,2,5};
+        int[] math3 = {3,3,1,1,2,2,4,4,5,5};
         
-        int min1 = 0;
-        int min2 = 0;
-        int min3 = 0;
-        for(int i=0; i<answers.length; i++) {
-        	if(answers[i] == arr1[i%arr1.length]) {
-        		min1++;
-        	}
-        	if(answers[i] == arr2[i%arr2.length]) {
-        		min2++;
-        	}
-        	if(answers[i] == arr3[i%arr3.length]) {
-        		min3++;
-        	}
+        int result1 = 0;
+        int result2 = 0;
+        int result3 = 0;
+        for(int i=0; i<answers.length; i++){
+            if(answers[i]==math1[i%math1.length]) result1++;
+            if(answers[i]==math2[i%math2.length]) result2++;
+            if(answers[i]==math3[i%math3.length]) result3++;
+            
         }
-        int max = Math.max(Math.max(min1, min2),min3);
-        List<Integer> list = new ArrayList<Integer>();
-        if(max == min1) {
-        	list.add(1);
-        }
-        if(max == min2) {
-        	list.add(2);
-        }
-        if(max == min3) {
-        	list.add(3);
-        }
+        
+        int max = Math.max(Math.max(result1,result2),result3);
+        
+        List<Integer> list = new ArrayList<>();
+        if(max == result1) list.add(1);
+        if(max == result2) list.add(2);
+        if(max == result3) list.add(3);
+        
         int[] answer = new int[list.size()];
-        for(int i=0; i<answer.length; i++) {
-        	answer[i] = list.get(i);
+        for(int i=0; i<list.size(); i++){
+            answer[i] = list.get(i);
         }
+        
         return answer;
         
     }
