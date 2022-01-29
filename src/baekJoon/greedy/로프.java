@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class Rope {
+public class ทฮวม {
+
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
@@ -15,14 +16,19 @@ public class Rope {
 			arr[i] = Integer.parseInt(br.readLine());
 		}
 		
-		Arrays.sort(arr);
-		int max = 0;
-		for(int i=0; i<arr.length; i++) {
-			if(arr[i]*(N-i)>max) {
-				max = arr[i]*(N-i);
+		arr = Arrays.stream(arr)
+				.boxed()
+				.sorted((o1,o2) -> o2-o1)
+				.mapToInt(Integer::intValue)
+				.toArray();
+		
+		int result = arr[0];
+		for(int i=1; i<N; i++) {
+			if(result<arr[i]*(i+1)) {
+				result = arr[i]*(i+1); 
 			}
 		}
-		System.out.println(max);	
+		System.out.println(result);
 	}
 
 }
