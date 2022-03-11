@@ -7,15 +7,15 @@ public class Àç±ÍÇÔ¼ö {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 		
-		permulate(N);
+		permutation(N);
 		
 	}
 
-	private static void permulate(int n) {
+	private static void permutation(int n) {
 		if(n==0) {
 			return;
 		}else {
-			permulate(n-1);
+			permutation(n-1);
 			System.out.print(n+" ");
 		}
 		
