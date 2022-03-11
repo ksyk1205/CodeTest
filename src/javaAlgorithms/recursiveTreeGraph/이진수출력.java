@@ -7,14 +7,14 @@ public class 이진수출력 {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 		
-		permulate(N);
+		permutation(N);
 	}
 
-	private static void permulate(int n) {
+	private static void permutation(int n) {
 		if(n==0) {
 			return;
 		}else {
-			permulate(n/2);
+			permutation(n/2);
 			System.out.print(n%2);
 		}
 		
