@@ -1,27 +1,27 @@
 package javaAlgorithms.recursiveTreeGraph;
 
 
-class Node{
+class NodeDFS{
 	int data;
-	Node lt, rt;
-	public Node(int val) {
+	NodeDFS lt, rt;
+	public NodeDFS(int val) {
 		data = val;
 		lt=rt=null;
 	}
 }
-public class 이진트리순회 {
-	static Node root;
+public class 이진트리순회DFS {
+	static NodeDFS root;
 	public static void main(String[] args) {
-		root = new Node(1);
-		root.lt = new Node(2);
-		root.rt = new Node(3);
-		root.lt.lt = new Node(4);
-		root.lt.rt = new Node(5);
-		root.rt.lt = new Node(6);
-		root.rt.rt = new Node(7);
+		root = new NodeDFS(1);
+		root.lt = new NodeDFS(2);
+		root.rt = new NodeDFS(3);
+		root.lt.lt = new NodeDFS(4);
+		root.lt.rt = new NodeDFS(5);
+		root.rt.lt = new NodeDFS(6);
+		root.rt.rt = new NodeDFS(7);
 		DFS(root);
 	}
-	private static void DFS(Node root) {
+	private static void DFS(NodeDFS root) {
 		if(root == null) {
 			return;
 		}else {
