@@ -33,7 +33,6 @@ public class 수열추측하기 {
 				}
 			}			
 		}
-		
 	}
 	
 	public static void main(String[] args) {
